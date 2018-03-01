@@ -1,17 +1,20 @@
 
-[中文版](./README-zh.md)
+[English](./README.md)
+ | [中文版](./README-zh.md)
  | [日本語版](./README-ja.md)
  | [한국어](./README-ko.md)
+ | [Português (BR)](./README-ptbr.md)
 
 [<img src="./images/elsewhen-logo.png" width="180" height="180">](http://elsewhen.co/)
 
 
 # Project Guidelines &middot; [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-> While developing a new project is like rolling on a green field for you, maintaining it is a potential dark twisted nightmare for someone else.
-Here's a list of guidelines we've found, written and gathered that (we think) works really well with most JavaScript projects here at [elsewhen](http://elsewhen.co).
-If you want to share a best practice, or think one of these guidelines should be removed, [feel free to share it with us](http://makeapullrequest.com).
+> Enquanto desenvolver um novo projeto pode ser um passeio no parque para você, a manutenção desse projeto pode ser um pesadelo para alguém.
+> Essa é uma lista de padrões que encontramos, escrito e agrupado de uma maneira (nós pensamos) que funciona muito bem na maioria dos projetos em Javascript aqui na [elsewhen](http://elsewhen.co).
+> Se você tiver uma boa prática para adicionar ou acha que alguma delas deve ser removida daqui, [sinta-se livre para compartilhar com a gente](http://makeapullrequest.com).
+
 - [Git](#git)
-    - [Some Git rules](#some-git-rules)
+    - [Algumas regras do Git](#some-git-rules)
     - [Git workflow](#git-workflow)
     - [Writing good commit messages](#writing-good-commit-messages)
 - [Documentation](#documentation)
@@ -33,28 +36,29 @@ If you want to share a best practice, or think one of these guidelines should be
 
 <a name="git"></a>
 ## 1. Git
-![Git](/images/branching.png)
+![Git](./images/branching.png)
 <a name="some-git-rules"></a>
 
-### 1.1 Some Git rules
-There are a set of rules to keep in mind:
-* Perform work in a feature branch.
+### 1.1 Algumas regras do Git
+Há um conjunto de regras para serem seguidas:
+* Realize alterações numa branch separada
     
-    _Why:_
-    >Because this way all work is done in isolation on a dedicated branch rather than the main branch. It allows you to submit multiple pull requests without confusion. You can iterate without polluting the master branch with potentially unstable, unfinished code. [read more...](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
-* Branch out from `develop`
+    _Motivo:_
+    >Por que dessa maneira, todo o trabalho é feito de maneira isolada numa branch dedicada ao invés de ser feito na branch principal. Isso te permite criar vários pull requests sem confusões. Você pode passar pela master sem a poluir com código potencialmente instável e não finalizado. [leia mais...](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
     
-    _Why:_
+* Crie novas branches a partir da `develop`
+    
+    _Motivo:_
     >This way, you can make sure that code in master will almost always build without problems, and can be mostly used directly for releases (this might be overkill for some projects).
 
 * Never push into `develop` or `master` branch. Make a Pull Request.
     
-    _Why:_
+    _Motivo:_
     > It notifies team members that they have completed a feature. It also enables easy peer-review of the code and dedicates forum for discussing the proposed feature.
 
 * Update your local `develop` branch and do an interactive rebase before pushing your feature and making a Pull Request.
 
-    _Why:_
+    _Motivo:_
     > Rebasing will merge in the requested branch (`master` or `develop`) and apply the commits that you have made locally to the top of the history without creating a merge commit (assuming there were no conflicts). Resulting in a nice and clean history. [read more ...](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
 * Resolve potential conflicts while rebasing and before making a Pull Request.
